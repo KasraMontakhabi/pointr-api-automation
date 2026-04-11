@@ -10,5 +10,6 @@
     "status": 400,
     "headers": { "Content-Type": "application/json" },
     "body": "{\"error\": \"Levels array must not be empty\"}"
-  }
+  },
+  "priority": 1
 }

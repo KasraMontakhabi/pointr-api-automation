@@ -3,12 +3,15 @@
     "method": "POST",
     "url": "/api/v1/buildings",
     "bodyPatterns": [
-      { "matchesJsonPath": "$[?(!@.siteId)]" }
+      {
+        "matchesJsonPath": "$[?(!@.siteId)]"
+      }
     ]
   },
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
     "body": "{\"error\": \"Field 'siteId' is required\"}"
-  }
+  },
+  "priority": 1
 }

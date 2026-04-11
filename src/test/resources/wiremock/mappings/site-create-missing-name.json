@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/sites",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(!@.name)]" }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Field 'name' is required\"}"
+  }
+}

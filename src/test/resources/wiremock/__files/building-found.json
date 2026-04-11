@@ -1,0 +1,8 @@
+{
+  "id": "building-001",
+  "siteId": "site-001",
+  "name": "Main Hospital Block",
+  "description": "Primary patient care building",
+  "floorCount": 8,
+  "createdAt": "2026-04-11T10:00:00Z"
+}

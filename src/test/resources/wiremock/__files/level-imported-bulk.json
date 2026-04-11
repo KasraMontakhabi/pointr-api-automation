@@ -1,0 +1,27 @@
+{
+  "buildingId": "building-001",
+  "imported": 3,
+  "levels": [
+    {
+      "id": "level-001",
+      "name": "Ground Floor",
+      "levelIndex": 0,
+      "description": "Main entrance and reception",
+      "createdAt": "2026-04-11T10:00:00Z"
+    },
+    {
+      "id": "level-002",
+      "name": "First Floor",
+      "levelIndex": 1,
+      "description": "Outpatient clinics",
+      "createdAt": "2026-04-11T10:00:00Z"
+    },
+    {
+      "id": "level-003",
+      "name": "Second Floor",
+      "levelIndex": 2,
+      "description": "Surgical suites",
+      "createdAt": "2026-04-11T10:00:00Z"
+    }
+  ]
+}

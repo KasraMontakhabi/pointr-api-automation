@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "DELETE",
+    "url": "/api/v1/sites/site-001"
+  },
+  "response": {
+    "status": 204
+  }
+}

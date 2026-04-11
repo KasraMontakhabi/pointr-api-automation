@@ -5,6 +5,8 @@
 
     <listeners>
         <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
+        <listener class-name="org.testng.reporters.EmailableReporter2"/>
+        <listener class-name="org.testng.reporters.FailedReporter"/>
     </listeners>
 
     <test name="Site API Tests">

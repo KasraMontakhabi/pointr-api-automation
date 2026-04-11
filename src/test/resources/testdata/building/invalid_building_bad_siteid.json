@@ -1,0 +1,6 @@
+{
+  "siteId": "nonexistent-site",
+  "name": "Ghost Building",
+  "description": "This building references a non-existent site",
+  "floorCount": 2
+}

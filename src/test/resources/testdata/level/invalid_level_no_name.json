@@ -1,0 +1,9 @@
+{
+  "buildingId": "building-001",
+  "levels": [
+    {
+      "levelIndex": 0,
+      "description": "This level has no name field"
+    }
+  ]
+}

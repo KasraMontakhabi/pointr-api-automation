@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/levels",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$[?(!@.buildingId)]" }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Field 'buildingId' is required\"}"
+  }
+}

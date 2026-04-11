@@ -1,0 +1,13 @@
+{
+  "buildingId": "building-001",
+  "imported": 1,
+  "levels": [
+    {
+      "id": "level-001",
+      "name": "Ground Floor",
+      "levelIndex": 0,
+      "description": "Main entrance and reception",
+      "createdAt": "2026-04-11T10:00:00Z"
+    }
+  ]
+}

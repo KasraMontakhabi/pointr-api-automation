@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/levels",
+    "bodyPatterns": [
+      { "equalToJson": "{\"buildingId\": \"building-001\", \"levels\": []}", "ignoreExtraElements": false }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Levels array must not be empty\"}"
+  }
+}

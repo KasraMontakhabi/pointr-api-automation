@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/levels",
+    "bodyPatterns": [
+      { "matchesJsonPath": "$.levels[1]" }
+    ]
+  },
+  "response": {
+    "status": 201,
+    "headers": { "Content-Type": "application/json" },
+    "bodyFileName": "level-imported-bulk.json"
+  }
+}

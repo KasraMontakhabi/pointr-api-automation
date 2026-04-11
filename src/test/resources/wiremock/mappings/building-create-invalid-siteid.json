@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/buildings",
+    "bodyPatterns": [
+      { "equalToJson": "{\"siteId\": \"nonexistent-site\"}", "ignoreExtraElements": true }
+    ]
+  },
+  "response": {
+    "status": 404,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Site not found\"}"
+  }
+}

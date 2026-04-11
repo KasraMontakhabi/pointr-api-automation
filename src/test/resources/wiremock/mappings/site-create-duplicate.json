@@ -3,12 +3,21 @@
     "method": "POST",
     "url": "/api/v1/sites",
     "bodyPatterns": [
-      { "equalToJson": "{\"name\": \"Duplicate Site\"}", "ignoreExtraElements": true }
+      {
+        "equalToJson": {
+          "name": "Duplicate Site",
+          "description": "This name already exists",
+          "address": "456 Copy Street, Istanbul, TR"
+        },
+        "ignoreExtraElements": true,
+        "ignoreArrayOrder": true
+      }
     ]
   },
   "response": {
     "status": 409,
     "headers": { "Content-Type": "application/json" },
     "body": "{\"error\": \"A site with this name already exists\"}"
-  }
+  },
+  "priority": 1
 }

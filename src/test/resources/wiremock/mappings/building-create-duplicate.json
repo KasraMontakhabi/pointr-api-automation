@@ -3,12 +3,22 @@
     "method": "POST",
     "url": "/api/v1/buildings",
     "bodyPatterns": [
-      { "equalToJson": "{\"name\": \"Duplicate Building\"}", "ignoreExtraElements": true }
+      {
+        "equalToJson": {
+          "siteId": "site-001",
+          "name": "Duplicate Building",
+          "description": "This name already exists in this site",
+          "floorCount": 3
+        },
+        "ignoreExtraElements": true,
+        "ignoreArrayOrder": true
+      }
     ]
   },
   "response": {
     "status": 409,
     "headers": { "Content-Type": "application/json" },
     "body": "{\"error\": \"A building with this name already exists in this site\"}"
-  }
+  },
+  "priority": 1
 }

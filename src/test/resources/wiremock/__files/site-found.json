@@ -1,0 +1,9 @@
+{
+  "id": "site-001",
+  "name": "Pointr Hospital Campus",
+  "description": "Main hospital campus with 3 buildings",
+  "address": "123 Medical Drive, Istanbul, TR",
+  "latitude": 41.0082,
+  "longitude": 28.9784,
+  "createdAt": "2026-04-11T10:00:00Z"
+}

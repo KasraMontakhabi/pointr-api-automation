@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "DELETE",
+    "url": "/api/v1/buildings/nonexistent-id"
+  },
+  "response": {
+    "status": 404,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Building not found\"}"
+  }
+}

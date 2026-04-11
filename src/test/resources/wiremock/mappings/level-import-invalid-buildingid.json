@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/v1/levels",
+    "bodyPatterns": [
+      { "equalToJson": "{\"buildingId\": \"nonexistent-building\"}", "ignoreExtraElements": true }
+    ]
+  },
+  "response": {
+    "status": 404,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"error\": \"Building not found\"}"
+  }
+}

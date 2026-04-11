@@ -3,12 +3,26 @@
     "method": "POST",
     "url": "/api/v1/levels",
     "bodyPatterns": [
-      { "matchesJsonPath": "$.levels[?(@.size() == 1)]" }
+      {
+        "equalToJson": {
+          "buildingId": "building-001",
+          "levels": [
+            {
+              "name": "Ground Floor",
+              "levelIndex": 0,
+              "description": "Main entrance and reception"
+            }
+          ]
+        },
+        "ignoreExtraElements": false,
+        "ignoreArrayOrder": false
+      }
     ]
   },
   "response": {
     "status": 201,
     "headers": { "Content-Type": "application/json" },
     "bodyFileName": "level-imported-single.json"
-  }
+  },
+  "priority": 1
 }

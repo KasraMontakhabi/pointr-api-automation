@@ -27,7 +27,6 @@ public class BaseTest {
 
         RestAssured.baseURI = ConfigManager.getBaseUrl();
         RestAssured.port = ConfigManager.getPort();
-        RestAssured.basePath = ConfigManager.getBasePath();
 
         log.info("WireMock started on port {}", ConfigManager.getPort());
     }

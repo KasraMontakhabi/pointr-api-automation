@@ -1,0 +1,9 @@
+{
+  "buildingId": "nonexistent-building",
+  "levels": [
+    {
+      "name": "Ghost Floor",
+      "levelIndex": 0
+    }
+  ]
+}

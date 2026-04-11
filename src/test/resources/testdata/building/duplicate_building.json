@@ -1,0 +1,6 @@
+{
+  "siteId": "site-001",
+  "name": "Duplicate Building",
+  "description": "This name already exists in this site",
+  "floorCount": 3
+}

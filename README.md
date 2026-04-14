@@ -59,6 +59,29 @@ src/test/resources/
 
 ---
 
+## How WireMock Works Here
+
+WireMock acts as a fake HTTP server that runs locally during tests. Instead of calling a real Pointr API, every test sends requests to WireMock, and WireMock replies with pre-defined responses.
+
+**The flow for each test:**
+
+```
+Test code
+  → sends HTTP request (e.g. POST /sites)
+    → WireMock receives it
+      → matches it against a stub in wiremock/mappings/
+        → returns the configured response (status code + body)
+          → test asserts on that response
+```
+
+**Stubs** are JSON files in `wiremock/mappings/`. Each stub says: "if you receive a request matching X, respond with Y." For example, a stub might say: if the request is `POST /sites` with a valid body, return `201` with a site object; if the body is missing a required field, return `400`.
+
+**Response bodies** for stubs live in `wiremock/__files/` and are referenced by name from the mapping files, keeping the stub definitions short.
+
+When a test starts, `BaseTest` boots a WireMock server and loads all stubs from the `wiremock/` folder. When the test finishes, the server shuts down. Each test run starts with a clean, predictable state.
+
+---
+
 ## Running Tests
 
 **Prerequisites:** Java 17, Maven 3.8+
@@ -66,9 +89,6 @@ src/test/resources/
 ```bash
 # Run all tests (dev environment)
 mvn test
-
-# Run with staging config (placeholder — all tests target WireMock regardless)
-mvn test -Denv=staging
 
 # Re-run only failed tests from the last run
 mvn test -Dsurefire.suiteXmlFiles=target/surefire-reports/testng-failed.xml

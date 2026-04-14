@@ -9,7 +9,7 @@
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Levels array must not be empty\"}"
+    "bodyFileName": "level-import-empty-array.json"
   },
   "priority": 1
 }

@@ -11,7 +11,7 @@
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Field 'siteId' is required\"}"
+    "bodyFileName": "building-create-missing-siteid.json"
   },
   "priority": 1
 }

@@ -9,7 +9,7 @@
   "response": {
     "status": 404,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Site not found\"}"
+    "bodyFileName": "building-create-invalid-siteid.json"
   },
   "priority": 1
 }

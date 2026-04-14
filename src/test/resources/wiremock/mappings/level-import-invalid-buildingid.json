@@ -9,7 +9,7 @@
   "response": {
     "status": 404,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Building not found\"}"
+    "bodyFileName": "level-import-invalid-buildingid.json"
   },
   "priority": 1
 }

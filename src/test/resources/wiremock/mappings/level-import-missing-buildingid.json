@@ -9,6 +9,6 @@
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Field 'buildingId' is required\"}"
+    "bodyFileName": "level-import-missing-buildingid.json"
   }
 }

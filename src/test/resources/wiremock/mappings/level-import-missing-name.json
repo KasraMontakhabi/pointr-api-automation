@@ -9,7 +9,7 @@
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Field 'name' is required for each level\"}"
+    "bodyFileName": "level-import-missing-name.json"
   },
   "priority": 1
 }

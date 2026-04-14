@@ -11,7 +11,7 @@
   "response": {
     "status": 400,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Field 'name' is required\"}"
+    "bodyFileName": "site-create-missing-name.json"
   },
   "priority": 1
 }

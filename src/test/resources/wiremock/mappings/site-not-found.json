@@ -6,6 +6,6 @@
   "response": {
     "status": 404,
     "headers": { "Content-Type": "application/json" },
-    "body": "{\"error\": \"Site not found\"}"
+    "bodyFileName": "site-not-found.json"
   }
 }

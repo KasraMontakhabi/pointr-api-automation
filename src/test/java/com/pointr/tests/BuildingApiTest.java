@@ -1,10 +1,14 @@
 package com.pointr.tests;
 
 import com.pointr.api.BuildingApi;
+import com.pointr.models.Building;
 import com.pointr.utils.TestDataLoader;
+import io.restassured.common.mapper.TypeRef;
+import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class BuildingApiTest extends BaseTest {
@@ -20,23 +24,23 @@ public class BuildingApiTest extends BaseTest {
     public void shouldCreateBuildingSuccessfully() {
         String body = TestDataLoader.load("testdata/building/valid_building.json");
 
-        buildingApi.createBuilding(body)
-            .then()
-            .statusCode(201)
-            .body("id", notNullValue())
-            .body("siteId", equalTo("site-001"))
-            .body("name", equalTo("Main Hospital Block"));
+        Response response = buildingApi.createBuilding(body);
+        response.then().statusCode(201);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getId(), notNullValue());
+        assertThat(building.getSiteId(), equalTo("site-001"));
+        assertThat(building.getName(), equalTo("Main Hospital Block"));
     }
 
     @Test(description = "TC-BLDG-002 - Successfully retrieve an existing building by ID")
     public void shouldRetrieveBuildingById() {
-        buildingApi.getBuilding("building-001")
-            .then()
-            .statusCode(200)
-            .body("id", equalTo("building-001"))
-            .body("siteId", notNullValue())
-            .body("name", notNullValue())
-            .body("createdAt", notNullValue());
+        Response response = buildingApi.getBuilding("building-001");
+        response.then().statusCode(200);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getId(), equalTo("building-001"));
+        assertThat(building.getSiteId(), notNullValue());
+        assertThat(building.getName(), notNullValue());
+        assertThat(building.getCreatedAt(), notNullValue());
     }
 
     @Test(description = "TC-BLDG-003 - Successfully delete an existing building")
@@ -106,44 +110,44 @@ public class BuildingApiTest extends BaseTest {
     public void shouldReturnGeneratedIdOnCreate() {
         String body = TestDataLoader.load("testdata/building/valid_building.json");
 
-        buildingApi.createBuilding(body)
-            .then()
-            .statusCode(201)
-            .body("id", notNullValue())
-            .body("id", not(emptyString()));
+        Response response = buildingApi.createBuilding(body);
+        response.then().statusCode(201);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getId(), notNullValue());
+        assertThat(building.getId(), not(emptyString()));
     }
 
     @Test(description = "TC-BLDG-011 - Create building response contains siteId")
     public void shouldReturnSiteIdOnCreate() {
         String body = TestDataLoader.load("testdata/building/valid_building.json");
 
-        buildingApi.createBuilding(body)
-            .then()
-            .statusCode(201)
-            .body("siteId", equalTo("site-001"));
+        Response response = buildingApi.createBuilding(body);
+        response.then().statusCode(201);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getSiteId(), equalTo("site-001"));
     }
 
     @Test(description = "TC-BLDG-012 - Create building response contains createdAt timestamp")
     public void shouldReturnCreatedAtOnCreate() {
         String body = TestDataLoader.load("testdata/building/valid_building.json");
 
-        buildingApi.createBuilding(body)
-            .then()
-            .statusCode(201)
-            .body("createdAt", notNullValue())
-            .body("createdAt", not(emptyString()));
+        Response response = buildingApi.createBuilding(body);
+        response.then().statusCode(201);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getCreatedAt(), notNullValue());
+        assertThat(building.getCreatedAt(), not(emptyString()));
     }
 
     @Test(description = "TC-BLDG-013 - Retrieve building response body matches expected schema")
     public void shouldReturnValidSchemaOnRetrieve() {
-        buildingApi.getBuilding("building-001")
-            .then()
-            .statusCode(200)
-            .body("id", notNullValue())
-            .body("siteId", notNullValue())
-            .body("name", notNullValue())
-            .body("description", notNullValue())
-            .body("floorCount", notNullValue())
-            .body("createdAt", notNullValue());
+        Response response = buildingApi.getBuilding("building-001");
+        response.then().statusCode(200);
+        Building building = response.as(new TypeRef<Building>() {});
+        assertThat(building.getId(), notNullValue());
+        assertThat(building.getSiteId(), notNullValue());
+        assertThat(building.getName(), notNullValue());
+        assertThat(building.getDescription(), notNullValue());
+        assertThat(building.getFloorCount(), notNullValue());
+        assertThat(building.getCreatedAt(), notNullValue());
     }
 }
